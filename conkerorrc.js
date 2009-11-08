@@ -9,6 +9,7 @@ require("page-modes/wikipedia.js");
 require("gitweb-webjump.js");
 require("extensions/adblockplus.js");
 require("session.js");
+require("block-content-focus-change.js");
 
 // Some settings
 session_auto_save_auto_load = "prompt";
@@ -16,7 +17,7 @@ url_remoting_fn = load_url_in_new_buffer;
 view_source_use_external_editor = false;
 xkcd_add_title = true;
 
-browser_prevent_automatic_form_focus_mode(true);
+//browser_prevent_automatic_form_focus_mode(true);
 google_search_bind_number_shortcuts();
 
 // Webjump oneliners
