@@ -99,7 +99,9 @@ define_webjump("readme", "https://wiki.phys.ethz.ch/readme/doku.php?do=search&id
 define_key(content_buffer_normal_keymap, "M-left", "back");
 define_key(content_buffer_normal_keymap, "M-right", "forward");
 
-///////////////////////////////////////////////////////
+/*
+ * TODO: C-x C-b
+ */
 
 /*
 function list_buffers (buffer, target) {
