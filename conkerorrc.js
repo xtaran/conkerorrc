@@ -1,5 +1,7 @@
-// Triggers error in Lenny (0.9~git080629-2) only
-//default_directory = "/home/hanno/Dokumente";
+/* Axel's conkerorrc
+ *
+ * git repository at http://git.noone.org/?p=conkerorrc.git
+ */
 
 //require("new-tabs.js");
 //require("tab-bar.js");
