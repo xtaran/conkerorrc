@@ -118,12 +118,11 @@ function list_buffers (buffer, target) {
                                                 $command_list = list),
                   target);
 }
+
+interactive("list-buffers", "List all buffers",   function(I) {
+          });
+
 */
-
-
-//interactive("list-buffers", "List all buffers",   function(I) {
-//          });
-
 
 
 // See also http://kb.mozillazine.org/Network.proxy.type
