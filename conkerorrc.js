@@ -8,7 +8,7 @@
 require("clicks-in-new-buffer.js");
 require("page-modes/google-search-results.js");
 require("page-modes/wikipedia.js");
-require("gitweb-webjump.js");
+require("index-webjumps.js");
 require("extensions/adblockplus.js");
 require("session.js");
 require("block-content-focus-change.js");
@@ -48,8 +48,6 @@ define_webjump("debqa", "http://qa.debian.org/developer.php?login=%s");
 define_webjump("longurl", "javascript:void(function(){if(typeof%20jQuery%20==%20'undefined'){var%20s=document.createElement('script');s.src='http://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.min.js';document.getElementsByTagName('head')[0].appendChild(s);}var%20l=document.createElement('script');l.src='http://www.longurlplease.com/js/longurlplease.js';document.getElementsByTagName('head')[0].appendChild(l);function%20runIfReady(){try{if($.longurlplease){%20clearInterval(interval);%20$.longurlplease();}}catch(e){}};%20var%20interval%20=%20window.setInterval(runIfReady,100);}())");
 
 // Multiple Webjumps
-gitweb_webjumps_opml_directory = get_home_directory();
-gitweb_webjumps_opml_directory.appendRelativePath(".conkerorrc/gitweb-webjumps-opml");
 define_gitweb_summary_webjump("gitweb-ko", "http://git.kernel.org");
 define_gitweb_summary_webjump("gitweb-cz", "http://repo.or.cz/w");
 
