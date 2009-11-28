@@ -8,7 +8,7 @@
 require("clicks-in-new-buffer.js");
 require("page-modes/google-search-results.js");
 require("page-modes/wikipedia.js");
-require("index-webjumps.js");
+require("index-webjump.js");
 require("extensions/adblockplus.js");
 require("session.js");
 require("block-content-focus-change.js");
