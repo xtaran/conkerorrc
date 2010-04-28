@@ -10,6 +10,7 @@ require("page-modes/google-search-results.js");
 require("page-modes/wikipedia.js");
 require("index-webjump.js");
 require("extensions/adblockplus.js");
+require("extensions/noscript.js");
 require("session.js");
 require("block-content-focus-change.js");
 
