@@ -14,6 +14,12 @@ require("index-webjump.js");
 require("session.js");
 require("block-content-focus-change.js");
 
+/*
+load_paths.unshift("chrome://conkeror-contrib/content/");
+require("mode-line-buttons.js");
+mode_line_add_buttons(standard_mode_line_buttons, true);
+*/
+
 // Some settings
 session_auto_save_auto_load = "prompt";
 url_remoting_fn = load_url_in_new_buffer;
