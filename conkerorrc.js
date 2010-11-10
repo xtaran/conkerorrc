@@ -32,7 +32,7 @@ define_webjump("identica", "http://identi.ca/%s");
 define_webjump("imdb", "http://imdb.com/find?q=%s");
 define_webjump("kol", "http://kol.coldfront.net/thekolwiki/index.php/%s");
 define_webjump("ohloh", "https://www.ohloh.net/p?query=%s");
-//define_webjump("scroogle", "https://ssl.scroogle.org/cgi-bin/nbbwssl.cgi?Gw=%s");
+define_webjump("scroogle", "https://ssl.scroogle.org/cgi-bin/nbbwssl.cgi?Gw=%s");
 define_webjump("ixquick", "http://ixquick.com/do/metasearch.pl?query=%s");
 define_webjump("symlink", "http://www.symlink.ch/search.pl?query=%s");
 define_webjump("trans", "http://translate.google.com/translate_t#auto|en|%s");
