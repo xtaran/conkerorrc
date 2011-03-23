@@ -13,6 +13,7 @@ require("index-webjump.js");
 //require("extensions/noscript.js");
 require("session.js");
 require("block-content-focus-change.js");
+require("favicon");
 
 /*
 load_paths.unshift("chrome://conkeror-contrib/content/");
@@ -25,6 +26,10 @@ session_auto_save_auto_load = "prompt";
 url_remoting_fn = load_url_in_new_buffer;
 view_source_use_external_editor = false;
 xkcd_add_title = true;
+read_buffer_show_icons = true;
+
+// favicons hook
+add_hook("mode_line_hook", mode_line_adder(buffer_icon_widget), true);
 
 //browser_prevent_automatic_form_focus_mode(true);
 google_search_bind_number_shortcuts();
