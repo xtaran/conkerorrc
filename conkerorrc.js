@@ -1,4 +1,4 @@
-/* Axel's conkerorrc
+/* Axel's conkerorrc -*- js2 -*-
  *
  * git repository at http://git.noone.org/?p=conkerorrc.git
  */
