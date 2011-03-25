@@ -51,6 +51,7 @@ define_webjump("symlink", "http://www.symlink.ch/search.pl?query=%s");
 define_webjump("trans", "http://translate.google.com/translate_t#auto|en|%s");
 define_webjump("twitter", "http://twitter.com/%s");
 define_webjump("urban", "http://www.urbandictionary.com/define.php?term=%s");
+define_webjump("wolframalpha", "http://www.wolframalpha.com/input/?i=%s");
 define_webjump("youtube", "http://www.youtube.com/results?search_query=%s&search=Search");
 
 // New Debian Webjumps
@@ -58,6 +59,7 @@ define_webjump("buildd", "https://buildd.debian.org/%s");
 define_webjump("buildd-experimental", "http://experimental.ftbfs.de/%s");
 define_webjump("buildd-ports", "http://buildd.debian-ports.org/build.php?pkg=%s");
 define_webjump("debqa", "http://qa.debian.org/developer.php?login=%s");
+define_webjump("debpopcon", "http://qa.debian.org/popcon.php?package=%s");
 
 // JS Webjumps
 define_webjump("longurl", "javascript:void(function(){if(typeof%20jQuery%20==%20'undefined'){var%20s=document.createElement('script');s.src='http://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.min.js';document.getElementsByTagName('head')[0].appendChild(s);}var%20l=document.createElement('script');l.src='http://www.longurlplease.com/js/longurlplease.js';document.getElementsByTagName('head')[0].appendChild(l);function%20runIfReady(){try{if($.longurlplease){%20clearInterval(interval);%20$.longurlplease();}}catch(e){}};%20var%20interval%20=%20window.setInterval(runIfReady,100);}())");
@@ -111,6 +113,8 @@ define_webjump("readme", "https://wiki.phys.ethz.ch/readme/doku.php?do=search&id
 //define_key(content_buffer_normal_keymap, "C-w", "kill-current-buffer");
 define_key(content_buffer_normal_keymap, "M-left", "back");
 define_key(content_buffer_normal_keymap, "M-right", "forward");
+
+///////////////////////////////////////////////////////
 
 /*
  * TODO: C-x C-b
