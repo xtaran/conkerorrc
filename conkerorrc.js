@@ -54,6 +54,9 @@ define_webjump("urban", "http://www.urbandictionary.com/define.php?term=%s");
 define_webjump("wolframalpha", "http://www.wolframalpha.com/input/?i=%s");
 define_webjump("youtube", "http://www.youtube.com/results?search_query=%s&search=Search");
 
+// CVE
+define_webjump("cve", "https://cve.mitre.org/cgi-bin/cvename.cgi?name=%s");
+
 // New Debian Webjumps
 define_webjump("buildd", "https://buildd.debian.org/%s");
 define_webjump("buildd-experimental", "http://experimental.ftbfs.de/%s");
