@@ -1,4 +1,4 @@
-/* Axel's conkerorrc
+/* Axel's conkerorrc -*- js2 -*-
  *
  * git repository at http://git.noone.org/?p=conkerorrc.git
  */
@@ -28,6 +28,57 @@ view_source_use_external_editor = false;
 xkcd_add_title = true;
 read_buffer_show_icons = true;
 
+// Delayed session load
+/*
+
+From http://retroj.net/git/conkerorrc/content-delay.js
+
+This script is a hack that provides delayed loading for content buffers.
+The initial url of a buffer will not be loaded until that buffer is
+switched to.  Precaution is taken that the buffer's display_uri_string
+returns the delayed url, not about:blank, so things like tabs and sessions
+will still work properly.
+
+*/
+
+function content_delay (spec) {
+    this.delayed_load = spec;
+}
+
+function content_delay_init (b) {
+    if (b != b.window.buffers.current &&
+        b instanceof content_buffer)
+    {
+        b.load = content_delay;
+        b.__defineGetter__("display_uri_string",
+            function () {
+                if (this.delayed_load) {
+                    if (this.delayed_load instanceof load_spec)
+                        return load_spec_uri_string(this.delayed_load);
+                    return this.delayed_load;
+                }
+                if (this._display_uri)
+                    return this._display_uri;
+                if (this.current_uri)
+                    return this.current_uri.spec;
+                return "";
+            });
+    }
+}
+
+function content_delay_do_initial_load (b) {
+    if (b.hasOwnProperty("load")) {
+        delete b.load;
+        if (b.hasOwnProperty("delayed_load")) {
+            b.load(b.delayed_load);
+            delete b.delayed_load;
+        }
+    }
+}
+
+add_hook("create_buffer_early_hook", content_delay_init);
+add_hook("select_buffer_hook", content_delay_do_initial_load);
+
 // favicons hook
 add_hook("mode_line_hook", mode_line_adder(buffer_icon_widget), true);
 add_hook("mode_line_hook", mode_line_adder(loading_count_widget), true);
@@ -51,13 +102,18 @@ define_webjump("symlink", "http://www.symlink.ch/search.pl?query=%s");
 define_webjump("trans", "http://translate.google.com/translate_t#auto|en|%s");
 define_webjump("twitter", "http://twitter.com/%s");
 define_webjump("urban", "http://www.urbandictionary.com/define.php?term=%s");
+define_webjump("wolframalpha", "http://www.wolframalpha.com/input/?i=%s");
 define_webjump("youtube", "http://www.youtube.com/results?search_query=%s&search=Search");
+
+// CVE
+define_webjump("cve", "https://cve.mitre.org/cgi-bin/cvename.cgi?name=%s");
 
 // New Debian Webjumps
 define_webjump("buildd", "https://buildd.debian.org/%s");
 define_webjump("buildd-experimental", "http://experimental.ftbfs.de/%s");
 define_webjump("buildd-ports", "http://buildd.debian-ports.org/build.php?pkg=%s");
 define_webjump("debqa", "http://qa.debian.org/developer.php?login=%s");
+define_webjump("debpopcon", "http://qa.debian.org/popcon.php?package=%s");
 
 // JS Webjumps
 define_webjump("longurl", "javascript:void(function(){if(typeof%20jQuery%20==%20'undefined'){var%20s=document.createElement('script');s.src='http://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.min.js';document.getElementsByTagName('head')[0].appendChild(s);}var%20l=document.createElement('script');l.src='http://www.longurlplease.com/js/longurlplease.js';document.getElementsByTagName('head')[0].appendChild(l);function%20runIfReady(){try{if($.longurlplease){%20clearInterval(interval);%20$.longurlplease();}}catch(e){}};%20var%20interval%20=%20window.setInterval(runIfReady,100);}())");
@@ -111,6 +167,8 @@ define_webjump("readme", "https://wiki.phys.ethz.ch/readme/doku.php?do=search&id
 //define_key(content_buffer_normal_keymap, "C-w", "kill-current-buffer");
 define_key(content_buffer_normal_keymap, "M-left", "back");
 define_key(content_buffer_normal_keymap, "M-right", "forward");
+
+///////////////////////////////////////////////////////
 
 /*
  * TODO: C-x C-b
