@@ -195,3 +195,18 @@ interactive("delete", null,
     $browser_object = browser_object_dom_node);
 
 define_key(content_buffer_normal_keymap, "d", "delete");
+
+// Cookie Culler Stuff
+const cookie_culler_chrome = "chrome://cookieculler/content/CookieCuller.xul";
+
+interactive("cookie-culler-dialog", "Show the CookieCuller settings in a dialog box.",
+    function (I) {
+        var frame = I.buffer.top_frame;
+        frame.openDialog(cookie_culler_chrome,
+                         "CookieCuller",
+                         "centerscreen,chrome,dialog,modal,resizable");
+    });
+
+interactive("cookie-culler", "Open the CookieCuller settings in a new buffer.",
+    "find-url-new-buffer",
+    $browser_object = cookie_culler_chrome);
