@@ -109,10 +109,7 @@ define_webjump("youtube", "http://www.youtube.com/results?search_query=%s&search
 define_webjump("cve", "https://cve.mitre.org/cgi-bin/cvename.cgi?name=%s");
 
 // New Debian Webjumps
-define_webjump("buildd", "https://buildd.debian.org/%s");
-define_webjump("buildd-experimental", "http://experimental.ftbfs.de/%s");
-define_webjump("buildd-ports", "http://buildd.debian-ports.org/build.php?pkg=%s");
-define_webjump("debqa", "http://qa.debian.org/developer.php?login=%s");
+//define_webjump("buildd-experimental", "http://experimental.ftbfs.de/%s");
 define_webjump("debpopcon", "http://qa.debian.org/popcon.php?package=%s");
 
 // JS Webjumps
