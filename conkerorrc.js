@@ -91,7 +91,7 @@ google_search_bind_number_shortcuts();
 define_webjump("codesearch", "http://www.google.com/codesearch?q=%s");
 define_webjump("cpan", "http://search.cpan.org/search?query=%s&mode=all");
 define_webjump("cuil", "http://www.cuil.com/search?q=%s");
-define_webjump("leo", "http://pda.leo.org/?lp=ende&lang=de&searchLoc=0&cmpType=relaxed&relink=on&sectHdr=off&spellToler=std&search=%s");
+define_webjump("leo", "http://dict.leo.org/?lp=ende&lang=de&searchLoc=0&cmpType=relaxed&relink=on&sectHdr=off&spellToler=std&search=%s");
 define_webjump("identica", "http://identi.ca/%s");
 define_webjump("imdb", "http://imdb.com/find?q=%s");
 define_webjump("kol", "http://kol.coldfront.net/thekolwiki/index.php/%s");
