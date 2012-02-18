@@ -27,6 +27,7 @@ url_remoting_fn = load_url_in_new_buffer;
 view_source_use_external_editor = false;
 xkcd_add_title = true;
 read_buffer_show_icons = true;
+hints_display_url_panel = true;
 
 // Delayed session load
 /*
