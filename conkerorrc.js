@@ -91,15 +91,12 @@ google_search_bind_number_shortcuts();
 // Webjump oneliners
 define_webjump("codesearch", "http://www.google.com/codesearch?q=%s");
 define_webjump("cpan", "http://search.cpan.org/search?query=%s&mode=all");
-define_webjump("cuil", "http://www.cuil.com/search?q=%s");
 define_webjump("leo", "http://dict.leo.org/?lp=ende&lang=de&searchLoc=0&cmpType=relaxed&relink=on&sectHdr=off&spellToler=std&search=%s");
 define_webjump("identica", "http://identi.ca/%s");
 define_webjump("imdb", "http://imdb.com/find?q=%s");
 define_webjump("kol", "http://kol.coldfront.net/thekolwiki/index.php/%s");
 define_webjump("ohloh", "https://www.ohloh.net/p?query=%s");
-define_webjump("scroogle", "https://ssl.scroogle.org/cgi-bin/nbbwssl.cgi?Gw=%s");
 define_webjump("ixquick", "http://ixquick.com/do/metasearch.pl?query=%s");
-define_webjump("symlink", "http://www.symlink.ch/search.pl?query=%s");
 define_webjump("trans", "http://translate.google.com/translate_t#auto|en|%s");
 define_webjump("twitter", "http://twitter.com/%s");
 define_webjump("urban", "http://www.urbandictionary.com/define.php?term=%s");
