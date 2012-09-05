@@ -109,6 +109,7 @@ define_webjump("cve", "https://cve.mitre.org/cgi-bin/cvename.cgi?name=%s");
 // New Debian Webjumps
 define_webjump("debscreen", "http://screenshots.debian.net/package/%s");
 define_webjump("debsnap", "http://snapshot.debian.org/package/%s/");
+define_webjump("debsec", "http://security-tracker.debian.org/tracker/?query=%s");
 
 // JS Webjumps
 define_webjump("longurl", "javascript:void(function(){if(typeof%20jQuery%20==%20'undefined'){var%20s=document.createElement('script');s.src='http://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.min.js';document.getElementsByTagName('head')[0].appendChild(s);}var%20l=document.createElement('script');l.src='http://www.longurlplease.com/js/longurlplease.js';document.getElementsByTagName('head')[0].appendChild(l);function%20runIfReady(){try{if($.longurlplease){%20clearInterval(interval);%20$.longurlplease();}}catch(e){}};%20var%20interval%20=%20window.setInterval(runIfReady,100);}())");
