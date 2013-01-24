@@ -122,7 +122,7 @@ wikipedia_enable_didyoumean = true;
 define_wikipedia_webjumps("en", "de");
 
 // Personalized Webjumps
-define_delicious_webjumps("XTaran");
+define_delicious_webjumps("xtaran");
 define_lastfm_webjumps("XTaran");
 
 // Longer Webjumps
