@@ -151,8 +151,7 @@ define_webjump("wayback",
 // ETH Webjumps
 define_webjump("rt", "https://rt.phys.ethz.ch/rt/Search/Simple.html?q=%s",
                      $alternative = "https://rt.phys.ethz.ch/rt/");
-define_webjump("rtwiki", "https://rt.phys.ethz.ch/wiki/doku.php?do=search&id=%s",
-                         $alternative = "https://rt.phys.ethz.ch/wiki/doku.php");
+define_webjump("rtwiki", "https://isgkb.phys.ethz.ch/ikiwiki.cgi?P=%s");
 define_webjump("readme", "https://wiki.phys.ethz.ch/readme/doku.php?do=search&id=%s",
                          $alternative = "https://wiki.phys.ethz.ch/readme/doku.php");
 
