@@ -33,5 +33,6 @@ Conkeror
 
 Conkeror's git repository is
 [at repo.or.cz](http://repo.or.cz/w/conkeror.git), but there's also a
-copy [at GitHub](http://github.com/retroj/conkeror) for those who like
+(possibly outdated) copy
+[at GitHub](http://github.com/retroj/conkeror) for those who like
 GitHub.
