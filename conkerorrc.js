@@ -96,7 +96,7 @@ define_webjump("leo", "http://dict.leo.org/?lp=ende&lang=de&searchLoc=0&cmpType=
 define_webjump("identica", "http://identi.ca/%s");
 define_webjump("imdb", "http://imdb.com/find?q=%s");
 define_webjump("kol", "http://kol.coldfront.net/thekolwiki/index.php/%s");
-define_webjump("ohloh", "https://www.ohloh.net/p?query=%s");
+define_webjump("oh", "https://www.openhub.net/p?query=%s");
 define_webjump("ixquick", "http://ixquick.com/do/metasearch.pl?query=%s");
 define_webjump("trans", "http://translate.google.com/translate_t#auto|en|%s");
 define_webjump("twitter", "http://twitter.com/%s");
