@@ -31,6 +31,7 @@ You can contact the author at abe+conkerorrc@deuxchevaux.org
 Conkeror
 --------
 
-Conkeror's git repository is at http://repo.or.cz/w/conkeror.git, but
-there's also a copy at http://github.com/retroj/conkeror for those who
-like GitHub.
+Conkeror's git repository is
+[at repo.or.cz](http://repo.or.cz/w/conkeror.git), but there's also a
+copy [at GitHub](http://github.com/retroj/conkeror) for those who like
+GitHub.
