@@ -90,7 +90,7 @@ add_hook("mode_line_hook", mode_line_adder(buffer_count_widget), true);
 google_search_bind_number_shortcuts();
 
 // Webjump oneliners
-define_webjump("codesearch", "http://www.google.com/codesearch?q=%s");
+define_webjump("codesearch", "http://codesearch.debian.net/search?q=%s");
 define_webjump("cpan", "https://metacpan.org/search?q=%s&lucky=1");
 define_webjump("leo", "http://dict.leo.org/?lp=ende&lang=de&searchLoc=0&cmpType=relaxed&relink=on&sectHdr=off&spellToler=std&search=%s");
 define_webjump("identica", "http://identi.ca/%s");
