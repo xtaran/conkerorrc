@@ -20,7 +20,7 @@ The code is available via git
 [on my own Git server](http://git.noone.org/?p=conkerorrc.git).
 
 There are mirrors of the git repository
-[at Github](http://github.com/xtaran/conkerorrc) and
+[at GitHub](http://github.com/xtaran/conkerorrc) and
 [at Gitorious](https://gitorious.org/abe/conkerorrc).
 
 Contact
