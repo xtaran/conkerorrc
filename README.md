@@ -8,8 +8,10 @@ web browser.
 License
 -------
 
-You can copy and modify it under the terms of the GNU GPL version 2.0
-or higher as published by the FSF.
+You can copy and modify it under the terms of the
+[GNU GPL](https://www.gnu.org/licenses/gpl) version
+[2.0](https://www.gnu.org/licenses/gpl2) or higher as published by the
+[FSF](http://www.fsf.org/).
 
 Code
 ----
