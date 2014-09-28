@@ -121,7 +121,20 @@ define_gitweb_summary_webjump("gitweb-cz", "http://repo.or.cz/w");
 wikipedia_enable_didyoumean = true;
 define_wikipedia_webjumps("en", "de");
 
+function define_scuttle_webjumps (username, url) {
+    if (! url) url = "http://www.delicious.com/";
+    define_webjump("scuttle", url + username + "/%s",
+                   $alternative = url + username);
+    define_webjump("ascuttle", "javascript:location.href='"+url+"save"+
+                   "?v=2&url='+encodeURIComponent(location.href)+'&title='+"+
+                   "encodeURIComponent(document.title);");
+    define_webjump("sscuttle", url+"search?p=%s&u="+username+
+                   "&chk=&context=userposts&fr=del_icio_us&lc=1");
+    define_webjump("sascuttle", url+"search/all?search=%s");
+}
+
 // Personalized Webjumps
+define_scuttle_webjumps("abe", "https://noone.org/semanticscuttle/");
 define_delicious_webjumps("xtaran");
 define_lastfm_webjumps("XTaran");
 
