@@ -14,6 +14,7 @@ require("index-webjump.js");
 require("session.js");
 require("block-content-focus-change.js");
 require("favicon");
+require("content-policy.js");
 
 /*
 load_paths.unshift("chrome://conkeror-contrib/content/");
@@ -89,13 +90,13 @@ add_hook("mode_line_hook", mode_line_adder(buffer_count_widget), true);
 google_search_bind_number_shortcuts();
 
 // Webjump oneliners
-define_webjump("codesearch", "http://www.google.com/codesearch?q=%s");
-define_webjump("cpan", "http://search.cpan.org/search?query=%s&mode=all");
+define_webjump("codesearch", "http://codesearch.debian.net/search?q=%s");
+define_webjump("cpan", "https://metacpan.org/search?q=%s&lucky=1");
 define_webjump("leo", "http://dict.leo.org/?lp=ende&lang=de&searchLoc=0&cmpType=relaxed&relink=on&sectHdr=off&spellToler=std&search=%s");
 define_webjump("identica", "http://identi.ca/%s");
 define_webjump("imdb", "http://imdb.com/find?q=%s");
 define_webjump("kol", "http://kol.coldfront.net/thekolwiki/index.php/%s");
-define_webjump("ohloh", "https://www.ohloh.net/p?query=%s");
+define_webjump("oh", "https://www.openhub.net/p?query=%s");
 define_webjump("ixquick", "http://ixquick.com/do/metasearch.pl?query=%s");
 define_webjump("trans", "http://translate.google.com/translate_t#auto|en|%s");
 define_webjump("twitter", "http://twitter.com/%s");
@@ -164,8 +165,7 @@ define_webjump("wayback",
 // ETH Webjumps
 define_webjump("rt", "https://rt.phys.ethz.ch/rt/Search/Simple.html?q=%s",
                      $alternative = "https://rt.phys.ethz.ch/rt/");
-define_webjump("rtwiki", "https://rt.phys.ethz.ch/wiki/doku.php?do=search&id=%s",
-                         $alternative = "https://rt.phys.ethz.ch/wiki/doku.php");
+define_webjump("rtwiki", "https://isgkb.phys.ethz.ch/ikiwiki.cgi?P=%s");
 define_webjump("readme", "https://wiki.phys.ethz.ch/readme/doku.php?do=search&id=%s",
                          $alternative = "https://wiki.phys.ethz.ch/readme/doku.php");
 
@@ -277,3 +277,16 @@ interactive("cookie-culler-dialog", "Show the CookieCuller settings in a dialog 
 interactive("cookie-culler", "Open the CookieCuller settings in a new buffer.",
     "find-url-new-buffer",
     $browser_object = cookie_culler_chrome);
+
+// See http://conkeror.org/ContentPolicy#Block_Flash.2C_with_Host_Whitelist
+function block_flash (content_type, content_location) {
+    var Y = content_policy_accept, N = content_policy_reject;
+    var action = ({ "www.netcenter.ethz.ch":Y,
+                    "www.ncint.ethz.ch":Y }
+                  [content_location.host] || N);
+    if (action == N)
+        dumpln("blocked flash: "+content_location.spec);
+    return action;
+}
+content_policy_bytype_table.object = block_flash;
+add_hook("content_policy_hook", content_policy_bytype);
