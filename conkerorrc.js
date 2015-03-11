@@ -23,7 +23,7 @@ mode_line_add_buttons(standard_mode_line_buttons, true);
 */
 
 // Some settings
-session_auto_save_auto_load = true;
+session_auto_save_auto_load = "prompt";
 url_remoting_fn = load_url_in_new_buffer;
 view_source_use_external_editor = false;
 xkcd_add_title = true;
