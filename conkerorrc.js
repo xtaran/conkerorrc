@@ -90,16 +90,16 @@ add_hook("mode_line_hook", mode_line_adder(buffer_count_widget), true);
 google_search_bind_number_shortcuts();
 
 // Webjump oneliners
-define_webjump("codesearch", "http://www.google.com/codesearch?q=%s");
-define_webjump("cpan", "http://search.cpan.org/search?query=%s&mode=all");
+define_webjump("codesearch", "http://codesearch.debian.net/search?q=%s");
+define_webjump("cpan", "https://metacpan.org/search?q=%s&lucky=1");
 define_webjump("leo", "http://dict.leo.org/?lp=ende&lang=de&searchLoc=0&cmpType=relaxed&relink=on&sectHdr=off&spellToler=std&search=%s");
 define_webjump("identica", "http://identi.ca/%s");
 define_webjump("imdb", "http://imdb.com/find?q=%s");
 define_webjump("kol", "http://kol.coldfront.net/thekolwiki/index.php/%s");
-define_webjump("ohloh", "https://www.ohloh.net/p?query=%s");
+define_webjump("oh", "https://www.openhub.net/p?query=%s");
 define_webjump("ixquick", "http://ixquick.com/do/metasearch.pl?query=%s");
 define_webjump("trans", "http://translate.google.com/translate_t#auto|en|%s");
-define_webjump("twitter", "http://twitter.com/%s");
+define_webjump("twitter", "https://twitter.com/%s");
 define_webjump("urban", "http://www.urbandictionary.com/define.php?term=%s");
 define_webjump("wolframalpha", "http://www.wolframalpha.com/input/?i=%s");
 define_webjump("youtube", "http://www.youtube.com/results?search_query=%s&search=Search");
@@ -122,7 +122,20 @@ define_gitweb_summary_webjump("gitweb-cz", "http://repo.or.cz/w");
 wikipedia_enable_didyoumean = true;
 define_wikipedia_webjumps("en", "de");
 
+function define_scuttle_webjumps (username, url) {
+    if (! url) url = "http://www.delicious.com/";
+    define_webjump("scuttle", url + username + "/%s",
+                   $alternative = url + username);
+    define_webjump("ascuttle", "javascript:location.href='"+url+"save"+
+                   "?v=2&url='+encodeURIComponent(location.href)+'&title='+"+
+                   "encodeURIComponent(document.title);");
+    define_webjump("sscuttle", url+"search?p=%s&u="+username+
+                   "&chk=&context=userposts&fr=del_icio_us&lc=1");
+    define_webjump("sascuttle", url+"search/all?search=%s");
+}
+
 // Personalized Webjumps
+define_scuttle_webjumps("abe", "https://noone.org/semanticscuttle/");
 define_delicious_webjumps("xtaran");
 define_lastfm_webjumps("XTaran");
 
