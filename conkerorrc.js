@@ -139,29 +139,6 @@ define_scuttle_webjumps("abe", "https://noone.org/semanticscuttle/");
 define_delicious_webjumps("xtaran");
 define_lastfm_webjumps("XTaran");
 
-// Longer Webjumps
-define_webjump("down?",
-  function (url) {
-    if (url) {
-      return "http://downforeveryoneorjustme.com/" + url;
-    } else {
-      return "javascript:window.location.href='http://downforeveryoneorjustme.com/'+window.location.href;";
-    }
-  },
-  $argument = "optional",
-  $completer = history_completer($use_history = false, $use_bookmarks = true));
-
-define_webjump("wayback",
-  function (url) {
-    if (url) {
-      return "http://web.archive.org/web/*/" + url;
-    } else {
-      return "javascript:window.location.href='http://web.archive.org/web/*/'+window.location.href;";
-    }
-  },
-  $argument = "optional",
-  $completer = history_completer($use_history = false, $use_bookmarks = true));
-
 // ETH Webjumps
 define_webjump("rt", "https://rt.phys.ethz.ch/rt/Search/Simple.html?q=%s",
                      $alternative = "https://rt.phys.ethz.ch/rt/");
@@ -289,3 +266,26 @@ function block_flash (content_type, content_location) {
 }
 content_policy_bytype_table.object = block_flash;
 add_hook("content_policy_hook", content_policy_bytype);
+
+// Longer Webjumps
+define_webjump("down?",
+  function (url) {
+    if (url) {
+      return "http://downforeveryoneorjustme.com/" + url;
+    } else {
+      return "javascript:window.location.href='http://downforeveryoneorjustme.com/'+window.location.href;";
+    }
+  },
+  $argument = "optional",
+  $completer = history_completer($use_history = false, $use_bookmarks = true));
+
+define_webjump("wayback",
+  function (url) {
+    if (url) {
+      return "http://web.archive.org/web/*/" + url;
+    } else {
+      return "javascript:window.location.href='http://web.archive.org/web/*/'+window.location.href;";
+    }
+  },
+  $argument = "optional",
+  $completer = history_completer($use_history = false, $use_bookmarks = true));
