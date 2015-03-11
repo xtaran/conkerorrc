@@ -242,6 +242,7 @@ interactive("delete", null,
 define_key(content_buffer_normal_keymap, "d", "delete");
 
 // Cookie Culler Stuff
+/*
 const cookie_culler_chrome = "chrome://cookieculler/content/CookieCuller.xul";
 
 interactive("cookie-culler-dialog", "Show the CookieCuller settings in a dialog box.",
@@ -268,8 +269,10 @@ function block_flash (content_type, content_location) {
 }
 content_policy_bytype_table.object = block_flash;
 add_hook("content_policy_hook", content_policy_bytype);
+*/
 
 // Longer Webjumps
+/*
 define_webjump("down?",
   function (url) {
     if (url) {
@@ -284,10 +287,11 @@ define_webjump("down?",
 define_webjump("wayback",
   function (url) {
     if (url) {
-      return "http://web.archive.org/web/*/" + url;
+      return "http://web.archive.org/web/"+"*"+"/" + url;
     } else {
-      return "javascript:window.location.href='http://web.archive.org/web/*/'+window.location.href;";
+      return "javascript:window.location.href='http://web.archive.org/web/'+'*'+'/'+window.location.href;";
     }
   },
   $argument = "optional",
   $completer = history_completer($use_history = false, $use_bookmarks = true));
+*/
