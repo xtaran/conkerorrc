@@ -166,8 +166,7 @@ define_webjump("wayback",
 define_webjump("rt", "https://rt.phys.ethz.ch/rt/Search/Simple.html?q=%s",
                      $alternative = "https://rt.phys.ethz.ch/rt/");
 define_webjump("rtwiki", "https://isgkb.phys.ethz.ch/ikiwiki.cgi?P=%s");
-define_webjump("readme", "https://wiki.phys.ethz.ch/readme/doku.php?do=search&id=%s",
-                         $alternative = "https://wiki.phys.ethz.ch/readme/doku.php");
+define_webjump("readme", "https://readme.phys.ethz.ch/ikiwiki.cgi?P=%s");
 
 // Additional key bindings
 
