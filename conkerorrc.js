@@ -182,7 +182,8 @@ interactive("list-buffers", "List all buffers",   function(I) {
 
 
 // See also http://kb.mozillazine.org/Network.proxy.type
-require("minibuffer-completion.js");
+/*
+require("minibuffer-completion.js"); // no more exists
 function get_proxy_description(x) {
   switch (x) {
     case 'direct':             return 'Direct connection, no proxy';
@@ -228,6 +229,7 @@ interactive("set-proxy-type", "Change the proxy type or turn proxies off",
     user_pref("network.proxy.type", proxytype);
   }
 );
+*/
 
 // From http://jjfoerch.com/git/conkerorrc/commands.js
 interactive("delete", null,
